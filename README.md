@@ -1,2 +1,2 @@
-# Sequencia_de_Aminoacidos
+# Sequencia de Aminoácidos
 
