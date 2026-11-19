@@ -1,3 +1,5 @@
+print()
+
 tabela = {
     "ALA": "A",
     "ARG": "R",
@@ -39,7 +41,32 @@ def pegar_sequencia(arquivo, cadeia):
     
     return sequencia
 
+def comparar(sequencia_1, sequencia_2, nome_1, nome_2):
+    iguais = 0
+    total = min(len(sequencia_1), len(sequencia_2))
+
+    for i in range(total):
+        if sequencia_1[i] == sequencia_2[i]:
+            iguais += 1
+        else:
+            print(f"  Posição {i + 1}: {nome_1} tem '{sequencia_1[i]}' | {nome_2} tem '{sequencia_2[i]}'")
+
+    print()
+    print("-" * 70)
+    print()
+    porcentagem = (iguais / total) * 100
+    print(f"Identidade entre {nome_1} e {nome_2}: {porcentagem:.1f}%")
+    print()
+    print("-" * 70)
+    print()
+
 cavalo_a = pegar_sequencia("Horse.pdb", "A")
 humano_a = pegar_sequencia("Humam.pdb", "A")
 
-print(cavalo_a + "\n" + humano_a)
+cavalo_b = pegar_sequencia("Horse.pdb", "B")
+humano_b = pegar_sequencia("Humam.pdb", "B")
+
+comparar(cavalo_a, humano_a, "Cavalo (Horse) - Cadeia A", "Humano (Humam) - Cadeia A")
+comparar(cavalo_b, humano_b, "Cavalo (Horse) - Cadeia B", "Humano (Humam) - Cadeia B")
+
+#print(cavalo_a + "\n" + humano_a)
